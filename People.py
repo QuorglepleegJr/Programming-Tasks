@@ -1,7 +1,5 @@
 from Bank import Address
 class Person:
-    def __init__(self):
-        self.addDetails()
 
     def addDetails(self):
         self._name = input("Enter Name: ")
@@ -14,7 +12,7 @@ class Person:
         self.__address = Address(*address_lines)
         self.__age = int(input("Enter Age: "))
 
-    def editDetails(self):
+    def editDetail(self):
         detail = input("Enter Detail to edit: ").lower()
         while detail not in ("name", "address", "age"):
             print("Invalid detail, must be name, address, or age")
@@ -39,6 +37,9 @@ class Person:
         print(self.__address)
         print(f"Age: {self.__age}")
 
+    def getName(self):
+        return self._name # Used in Group.py
+
 class SpecialPerson(Person):
 
     def __init__(self):
@@ -50,8 +51,10 @@ class SpecialPerson(Person):
 
 def main():
     person1 = Person()
+    person1.addDetails()
     person2 = SpecialPerson()
-    person1.editDetails()
+    person2.addDetails()
+    person1.editDetail()
     person2.addTitle()
     person1.showDetails()
     person2.showDetails()
