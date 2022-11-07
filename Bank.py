@@ -8,7 +8,7 @@ class Address(object):
         string = ""
         for line in self.lines:
             string += line + "\n"
-        return string
+        return string.rstrip()
 
 class Date(object):
     def __init__(self, d=1, m=1, y=1970):
