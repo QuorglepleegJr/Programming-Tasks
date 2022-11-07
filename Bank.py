@@ -17,7 +17,7 @@ class Date(object):
         self.y = y
 
     def __str__(self):
-        return f"{d}/{m}/{y}"
+        return f"{self.d}/{self.m}/{self.y}"
 
 class Account(object): # Shouldn't be instantiated
 
@@ -96,3 +96,8 @@ class GoldAccount(BasicAccount):
             raise ValueError("Invalid amount to withdraw, must be a positive number less than the balance")
         else:
             self._balance -= amount
+
+    def showDetails(self):
+        super().showDetails()
+        print(f"Account Interest rate:\n{self.__interest_rate}%")
+        print(f"Date of last Interest:\n{self.__date_of_interest}")
