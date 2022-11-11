@@ -23,6 +23,7 @@ class Person:
             print("Old address:")
             print(self.__address)
             print("Enter new Address lines (leave blank to finish):")
+            address_lines = []
             line = input()
             while line:
                 address_lines.append(line)

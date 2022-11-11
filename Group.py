@@ -26,11 +26,18 @@ class Group:
         return -1
     
     def editPerson(self, locator):
-        if isinstance(locator, string):
-            index = findPerson(locator)
+        if isinstance(locator, str):
+            index = self.findPerson(locator)
         else:
             index = locator
         if index >= 0:
             self.__people[index].editDetail()
 
-# UNTESTED
+g = Group(2)
+print(g.getSize())
+g.addPeople()
+g.showPeople()
+g.showPerson(1)
+print(g.findPerson("b"))
+g.editPerson("j")
+g.showPerson(g.findPerson("j"))
